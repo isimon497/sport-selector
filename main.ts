@@ -80,13 +80,31 @@ function introductionScreen () {
 function swimming () {
     randomSport = randint(0, 2)
     game.splash("You should try", swimmingArray[randomSport])
+    sportAnimation(randomSport, true)
 }
-function sportAnimation (whichSport: number, swimmingOrRunning: boolean) {
-	
+function sportAnimation (whichSport: number, swimOrRun: boolean) {
+    if (swimOrRun) {
+        if (whichSport == 0) {
+        	
+        } else if (whichSport == 1) {
+        	
+        } else if (whichSport == 2) {
+        	
+        }
+    } else {
+        if (whichSport == 0) {
+        	
+        } else if (whichSport == 1) {
+        	
+        } else if (whichSport == 2) {
+        	
+        }
+    }
 }
 function running () {
     randomSport = randint(0, 2)
     game.splash("You should try", runningArray[randomSport])
+    sportAnimation(randomSport, false)
 }
 let randomSport = 0
 let swimmingArray: string[] = []
