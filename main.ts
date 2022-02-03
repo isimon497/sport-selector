@@ -1,18 +1,10 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    running()
+    swimming()
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.splash("You should try", Running_Array._pickRandom())
+    running()
 })
 function introductionScreen () {
-    giveInstruction()
-    Running_Array = ["Marathon Running", "Sprinting", "Soccer"]
-    Swimming_Array = ["Water Polo", "Scuba Diving", "Surfing"]
-}
-function running () {
-    game.splash("You should try", Swimming_Array._pickRandom())
-}
-function giveInstruction () {
     game.setDialogFrame(img`
         ..................................................................
         .....888..888........................................888..888.....
@@ -82,7 +74,21 @@ function giveInstruction () {
         ..................................................................
         `)
     game.showLongText("Do you like running(A) or swimming(B)? Press A, then your selection.", DialogLayout.Full)
+    runningArray = ["Marathon Running", "Sprinting", "Soccer"]
+    swimmingArray = ["Water Polo", "Scuba Diving", "Surfing"]
 }
-let Swimming_Array: string[] = []
-let Running_Array: string[] = []
+function swimming () {
+    randomSport = randint(0, 2)
+    game.splash("You should try", swimmingArray[randomSport])
+}
+function sportAnimation (whichSport: number, swimmingOrRunning: boolean) {
+	
+}
+function running () {
+    randomSport = randint(0, 2)
+    game.splash("You should try", runningArray[randomSport])
+}
+let randomSport = 0
+let swimmingArray: string[] = []
+let runningArray: string[] = []
 introductionScreen()
