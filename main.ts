@@ -140,7 +140,7 @@ function marathonAnimation () {
         . . . . . f f . . . f f f . . . 
         `, SpriteKind.Player)
     athlete.setPosition(0, 40)
-    athlete.setVelocity(75, 0)
+    athlete.setVelocity(50, 0)
     for (let index = 0; index < 1000; index++) {
         athlete.setImage(img`
             . . . . . . . . . . . . . . . . 
