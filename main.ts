@@ -141,6 +141,7 @@ function marathonAnimation () {
         `, SpriteKind.Player)
     athlete.setPosition(0, 40)
     athlete.setVelocity(50, 0)
+    // Animation for marathon runner
     for (let index = 0; index < 1000; index++) {
         athlete.setImage(img`
             . . . . . . . . . . . . . . . . 
@@ -331,6 +332,7 @@ function sprintingAnimation () {
         `, SpriteKind.Player)
     athlete.setPosition(0, 40)
     athlete.setVelocity(100, 0)
+    // controls the animation for the sprinter
     for (let index = 0; index < 1000; index++) {
         athlete.setImage(img`
             . . . . . . . . . . . . . . . . 
@@ -514,12 +516,14 @@ function scubaAnimation () {
         . . . . . f f . . f f . . . . . 
         `, SpriteKind.Player)
     athlete.sayText("You should try scuba diving!")
+    // This loop handles the velocity of the scuba diver. it randomly changes every 100 ms
     for (let index = 0; index < 900; index++) {
         athlete.setVelocity(randint(-50, 50), randint(-50, 50))
         pause(100)
     }
     athlete.setStayInScreen(true)
 }
+// Sets up the introduction. Asks if user wants to run or swim.
 function introductionScreen () {
     game.setDialogFrame(img`
         ..................................................................
@@ -593,11 +597,13 @@ function introductionScreen () {
     runningArray = ["Marathon Running", "Sprinting", "Soccer"]
     swimmingArray = ["Water Polo", "Scuba Diving", "Surfing"]
 }
+// picks a random swimming sport and tells the user that they should play that sport.
 function swimming () {
     randomSport = randint(0, 2)
     sportAnimation(randomSport, true)
     game.showLongText("You should try " + swimmingArray[randomSport], DialogLayout.Bottom)
 }
+// Calls the animation functions for sports depending on the parameters whichSport, an integer. and swimOrRun, a Boolean value.
 function sportAnimation (whichSport: number, swimOrRun: boolean) {
     if (swimOrRun) {
         if (whichSport == 0) {
@@ -776,6 +782,7 @@ function surfingAnimation () {
         `, SpriteKind.Player)
     surfBoard.setPosition(20, 82)
     athlete.setPosition(20, 82)
+    // controls movement of the surfer
     for (let index = 0; index < 50; index++) {
         athlete.x += 2.7
         surfBoard.x += 2.7
@@ -991,6 +998,7 @@ function soccerAnimation () {
     soccerBall.setVelocity(50, 0)
     pause(100)
     athlete.setVelocity(50, 0)
+    // This loop controls the animation for the soccer player. 
     for (let index = 0; index < 1000; index++) {
         athlete.setImage(img`
             . . . . . . . . . . . . . . . . 
@@ -1231,27 +1239,10 @@ function waterPoloAnimation () {
     goal_2.setPosition(125, 78)
     goal_1.setPosition(20, 78)
     athlete.setPosition(33, 78)
+    // controls the movement for the water polo player and the ball.
     for (let index = 0; index < 50; index++) {
         athlete.x += 1.5
         ball.x += 1.5
-        athlete.setImage(img`
-            . . . . . . . f f f f f . . . . 
-            . . . . . . f e e e e e f . . . 
-            . . . . f f e e e d d d d f . . 
-            . . . f d d e e d d d d d d c . 
-            . . . c d b e e d f d d f d c . 
-            f f . c d b e e d f d d f d d c 
-            f e f . c f e e d d d d e e d c 
-            f e f . . f e e e d c d d d d c 
-            f e f . . f f e e e d c c c f . 
-            f e f . f e e e e f f f f f . . 
-            . f f f e e e e e e e f . . . . 
-            . . f e e e e f e e f e f f . . 
-            . . f e e e f f f e e f f e f . 
-            . f b f f f f f f c d d b d d f 
-            . f d d c f . . f d d d c d d f 
-            . . f f f . . . f f f f f f f . 
-            `)
         pause(30)
     }
 }
