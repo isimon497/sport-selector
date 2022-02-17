@@ -784,8 +784,8 @@ function surfingAnimation () {
 }
 function running () {
     randomSport = randint(0, 2)
-    sportAnimation(randomSport, false)
     game.showLongText("You should try " + runningArray[randomSport], DialogLayout.Bottom)
+    sportAnimation(randomSport, false)
 }
 function soccerAnimation () {
     scene.setBackgroundImage(img`
