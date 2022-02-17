@@ -998,7 +998,7 @@ function soccerAnimation () {
     soccerBall.setVelocity(50, 0)
     pause(100)
     athlete.setVelocity(50, 0)
-    // This loop controls the animation for the soccer player. 
+    // This loop controls the animation for the soccer player.
     for (let index = 0; index < 1000; index++) {
         athlete.setImage(img`
             . . . . . . . . . . . . . . . . 
