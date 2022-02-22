@@ -789,6 +789,7 @@ function surfingAnimation () {
         pause(30)
     }
 }
+// picks a random running sport and tells the user that they should play that sport
 function running () {
     randomSport = randint(0, 2)
     game.showLongText("You should try " + runningArray[randomSport], DialogLayout.Bottom)
